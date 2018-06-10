@@ -21,9 +21,10 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
+      // Add packages to React Native here
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
-          // Add React Native packages here
+          new MainReactPackage(),
+          new NetworkModule()
       );
     }
 
