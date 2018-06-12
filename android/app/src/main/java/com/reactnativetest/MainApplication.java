@@ -1,7 +1,7 @@
 package com.reactnativetest;
 
 import android.app.Application;
-
+import com.reactnativetest.network.NetworkPackage;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -21,10 +21,9 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      // Add packages to React Native here
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new NetworkModule()
+          new NetworkPackage()
       );
     }
 

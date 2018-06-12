@@ -17,14 +17,14 @@ import java.util.List;
 // See line 30...
 
 // Found at: android/app/src/main/java/com/reactnativetest/network 
-public class DevicePackage implements ReactPackage {
+public class NetworkPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
        return Collections.emptyList();
     }
 
     @Override
-    public List<NativeModule> createnNativeModules(ReactApplicationContext reactContext) {
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
         // We import the module file here
         // This is where our NetworkModule gets the reactContext
@@ -33,8 +33,7 @@ public class DevicePackage implements ReactPackage {
     }
 
     // Backward Compatibility.. not sure why this is needed
-    public List<Class<? extends JavaScriptModule> createJSModules() {
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
         return new ArrayList<>();
     }
 }
-

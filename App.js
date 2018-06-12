@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
+  NativeModules,
   Text,
   View
 } from 'react-native';
@@ -18,6 +19,12 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
+// Run debugger, cannog get this assigned to the variable for some reason 
+const network = NativeModules.Network.getDeviceName((err, name) => {
+   console.log(name)
+   return name;
+})
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -31,7 +38,7 @@ export default class App extends Component<Props> {
           To get started, edit App.js
         </Text>
         <Text style={styles.instructions}>
-          {instructions}
+          Device Name: {network}
         </Text>
       </View>
     );

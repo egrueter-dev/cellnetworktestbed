@@ -19,14 +19,15 @@ public class NetworkModule extends ReactContextBaseJavaModule {
         return "Network";
     }
 
-    // Custom Functions for Export: //
+    // Custom Methods for Export: //
+
     // https://facebook.github.io/react-native/docs/native-modules-android.html
 
     // This is a test function, remove
     @ReactMethod
-    public void getDeviceName(Callback, cb) {
+    public void getDeviceName(Callback cb) {
         try {
-            cb.invoke(null, android.os.Build.MODEL)
+            cb.invoke(null, android.os.Build.MODEL);
         } catch (Exception e) {
             cb.invoke(e.toString(), null);
         }
